@@ -1,31 +1,30 @@
-require 'pry'
-require 'sinatra'
-require 'sinatra/json'
-require 'sinatra/activerecord'
-require 'rack/contrib'
+require "sinatra"
+require "sinatra/json"
+require "sinatra/activerecord"
+require "rack/contrib"
 
-require_relative 'models/speaker'
-require_relative 'graphql/schema'
+require_relative "models/speaker"
+require_relative "graphql/schema"
 
 class SoulsApi < Sinatra::Base
-  set :database_file, 'config/database.yml'
+  set :database_file, "config/database.yml"
   use Rack::JSONBodyParser
 
-  get '/' do
-    'It Works!'
+  get "/" do
+    "It Works!"
   end
 
-  get '/hello.json' do
-    message = { success: true, message: 'hello'}
+  get "/hello.json" do
+    message = { success: true, message: "hello" }
     json message
   end
 
-  get '/speakers' do
+  get "/speakers" do
     @speakers = Speaker.all
     json @speakers
   end
 
-  post '/graphql' do
+  post "/graphql" do
     token = request.env["HTTP_AUTHORIZATION"]
     context = {
       token: token
@@ -37,5 +36,4 @@ class SoulsApi < Sinatra::Base
     )
     json result
   end
-
 end
