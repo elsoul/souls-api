@@ -49,13 +49,6 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
-    factory_bot (6.1.0)
-      activesupport (>= 5.0.0)
-    factory_bot_rails (6.1.0)
-      factory_bot (~> 6.1.0)
-      railties (>= 5.0.0)
-    faker (2.14.0)
-      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     firebase_id_token (2.4.0)
       httparty (~> 0.16, >= 0.16.2)
@@ -208,8 +201,6 @@ DEPENDENCIES
   capybara-user_agent
   database_cleaner
   dotenv-rails (= 2.7.6)
-  factory_bot_rails (= 6.1.0)
-  faker (= 2.14.0)
   firebase_id_token (= 2.4.0)
   foreman (= 0.87.2)
   graphql (= 1.11.6)
@@ -234,4 +225,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.2.0
+   2.1.4

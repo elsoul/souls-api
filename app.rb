@@ -11,17 +11,8 @@ class SoulsApi < Sinatra::Base
   use Rack::JSONBodyParser
 
   get "/" do
-    "It Works!"
-  end
-
-  get "/hello.json" do
     message = { success: true, message: "hello" }
     json message
-  end
-
-  get "/speakers" do
-    @speakers = Speaker.all
-    json @speakers
   end
 
   post "/graphql" do
